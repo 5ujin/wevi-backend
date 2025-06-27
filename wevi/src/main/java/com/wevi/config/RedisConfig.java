@@ -16,9 +16,12 @@ public class RedisConfig {
         RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(factory);
 
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setValueSerializer(new StringRedisSerializer());
+        StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
 
+        redisTemplate.setKeySerializer(stringRedisSerializer);
+        redisTemplate.setValueSerializer(stringRedisSerializer);
+
+        redisTemplate.afterPropertiesSet(); // 설정 반영
         return redisTemplate;
     }
 }

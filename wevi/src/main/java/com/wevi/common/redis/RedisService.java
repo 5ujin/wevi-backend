@@ -1,6 +1,10 @@
 package com.wevi.common.redis;
 
+import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +14,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 @Service
+@Slf4j
 public class RedisService {
 
 

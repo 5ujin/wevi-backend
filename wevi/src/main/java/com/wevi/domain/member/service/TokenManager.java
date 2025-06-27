@@ -3,10 +3,12 @@ package com.wevi.domain.member.service;
 import com.wevi.common.jwt.JwtTokenProvider;
 import com.wevi.common.redis.RedisService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class TokenManager {
 
     private final JwtTokenProvider jwtTokenProvider;
